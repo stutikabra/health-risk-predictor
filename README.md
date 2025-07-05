@@ -1,14 +1,14 @@
-# Diabetes Risk Predictor
+# Health Risk Predictor
 ## How to run the app locally
 
-1. Clone the repo:
+1. Clone the repository:
 ```bash
-git clone https://github.com/stutikabra/diabetes-risk-predictor.git
+git clone https://github.com/stutikabra/health-risk-predictor.git
 ```
 
-2. Navigate to the folder:
+2. Change to the project directory:
 ```bash
-cd diabetes-risk-predictor
+cd health-risk-predictor
 ```
    
 3. Install dependencies:
@@ -16,7 +16,7 @@ cd diabetes-risk-predictor
 pip install -r requirements.txt
 ```
    
-4. Run Streamlit app:
+4. Launch the Streamlit app:
 ```bash
-streamlit run diabetesfinal.py
+streamlit run finalapp.py
 ```
