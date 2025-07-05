@@ -21,7 +21,8 @@ heart_models = {
 
 # Load transformers
 poly = joblib.load("poly.pkl")  # for Polynomial Regression (diabetes)
-scaler = joblib.load("scaler.pkl")  # for SVR and Heart Disease inputs
+scaler_heart = joblib.load("scaler_heart.pkl")
+scaler_diabetes = joblib.load("scaler_diabetes.pkl")
 
 # Disease selection
 disease = st.selectbox("Select Disease to Predict", ["Diabetes", "Heart Disease"])
@@ -71,7 +72,7 @@ gender_Other]])
     if model_choice == "Polynomial Regression":
         features = poly.transform(features)
     if model_choice == "Support Vector Regression":
-        features = scaler.transform(features)
+        features = scaler_diabetes.transform(features)
 
     if st.button('Predict Diabetes Risk'):
         if model_choice in ["Logistic Regression", "Random Forest"]:
@@ -131,7 +132,7 @@ list(heart_models.keys()))
     'sex_1']
 
     input_df = input_df[feature_order]
-    input_scaled = scaler.transform(input_df)
+    input_scaled = scaler_heart.transform(input_df)
 
     if st.button("Predict Heart Disease Risk"):
         prob = model.predict_proba(input_scaled)[0][1]
